@@ -26,8 +26,8 @@
                 </thead>
                 <tbody>
                     @foreach ($lists as $list)
-                        
-                    
+
+
                             <tr class="bg-navbar border-b ">
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                     {{ $list->warna }}
@@ -47,8 +47,8 @@
                                 <td class="px-6 py-4 text-right">
                                     <a href="{{ route('diagnosa.hasil', $list->id_diagnosa) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Hasil diagnosa</a>
                                 </td>
-                            </tr> 
-                        @endforeach 
+                            </tr>
+                        @endforeach
 
 
                 </tbody>
