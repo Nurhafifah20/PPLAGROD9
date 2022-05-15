@@ -66,6 +66,7 @@
         <div class="bg-navbar-young flex w-full flex-col rounded justify-center  box-border items-center py-10 lg:px-28 px-5 gap-y-5">
             <h1 class="md:text-6xl text-2xl sm:text-2xl font-bold mb-8">SIGN UP</h1>
             <form method="POST" action="{{ route('register') }}" class="flex flex-col gap-y-5 w-full">
+                    <x-auth-validation-errors class="mb-4" :errors="$errors" />
                     @csrf
 
                     <!-- Name -->

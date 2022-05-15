@@ -46,6 +46,10 @@ Route::name('ciri-fisik.')->group(function(){
     Route::post('/ciri-fisik/store', [CirifisikController::class, 'store'])->name('store');
 });
 
+Route::get('/chat', function(){
+    return view('chat.index');
+})->name('konsultasi');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

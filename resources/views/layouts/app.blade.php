@@ -9,6 +9,19 @@
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <title>SIAPA TAHU</title>
+  @livewireStyles
+  <style>
+      /* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+  </style>
 </head>
 <body>
 
@@ -39,7 +52,7 @@
                     <a class="block @if (Route::is('profile')) active @endif font-extrabold" href="{{ route('profile') }}">profile</a>
                 </li>
                 <li>
-                    <a class="block font-extrabold" href="/dashboard">konsultasi</a>
+                    <a class="block font-extrabold @if (Route::is('konsultasi')) active @endif" href="{{ route('konsultasi') }}">konsultasi</a>
                 </li>
             </ul>
         </div>
@@ -54,5 +67,6 @@
 
 
     <script src="{{ mix('js/app.js') }}"></script>
+    @livewireScripts
 </body>
 </html>

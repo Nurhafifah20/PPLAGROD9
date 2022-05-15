@@ -7,7 +7,13 @@
             <h1 class="font-bold sm:text-6xl text-2xl text-diagnosa">Diagnosa</h1>
             <p class="text-center mt-5">diagnosa merupakan fitur untuk mengecek kualitas kedelai yang anda punya yukk !!!</p>
             <p class="text-center">tambahkan data  diagnosa  untuk mengetahui kualitas kedelai anda</p>
-            <a href="{{ route('diagnosa.list') }}" class="mt-14 text-white py-5 px-7 font-bold bg-btn rounded-md">Tambahkan Data</a>
+            <a href="{{ route('diagnosa.list') }}" class="mt-14 text-white py-5 px-7 font-bold bg-btn rounded-md">
+                @if (Auth::user()->role)
+                    Tambahkan Data
+                @else
+                    Lihat Diagnosa
+                @endif
+            </a>
         </div>
     </div>
 </x-app-layout>

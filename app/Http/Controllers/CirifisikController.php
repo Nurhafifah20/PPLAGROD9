@@ -34,7 +34,13 @@ class CirifisikController extends Controller
 
     public function list()
     {
-        $cf = Cirifisik::where('id_user', Auth::user()->id)->get();
+        if(Auth::user()->role == 'ahli'){
+            $cf = Cirifisik::get();
+        }else{
+
+            $cf = Cirifisik::where('id_user', Auth::user()->id)->get();
+        }
+        // dd($cf);
         return view('ciri-fisik.list', ['lists' => $cf]);
     }
 

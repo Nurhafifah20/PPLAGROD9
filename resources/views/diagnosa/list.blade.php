@@ -45,7 +45,12 @@
                                     {{ $list->status }}
                                 </td>
                                 <td class="px-6 py-4 text-right">
+                                    @if ($list->id_diagnosa)
+                                        <a href="{{ route('diagnosa.hasil', $list->id_diagnosa) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Hasil diagnosa</a>
+                                    @else
+                                        
                                     <a href="{{ route('diagnosa.tambah', $list->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Tambah diagnosa</a>
+                                    @endif
                                 </td>
                             </tr> 
                         @endforeach 

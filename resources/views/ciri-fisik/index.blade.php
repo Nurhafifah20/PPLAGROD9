@@ -7,7 +7,10 @@
             <h1 class="font-bold sm:text-6xl text-2xl text-diagnosa">Ciri Fisik</h1>
             <p class="text-center mt-5">yukk !!!</p>
             <p class="text-center">tambahkan data  diagnosa  untuk mengetahui kualitas kedelai  anda</p>
+            @if (Auth::user()->role == 'pemula')
+                
             <a href="{{ route('ciri-fisik.form') }}" class="mt-14 text-white py-5 px-7 font-bold bg-btn rounded-md">Isi Form</a>
+            @endif
             <a href="{{ route('ciri-fisik.list') }}" class="mt-14 text-white py-5 px-7 font-bold bg-btn rounded-md">Daftar ciri fisik</a>
         </div>
     </div>

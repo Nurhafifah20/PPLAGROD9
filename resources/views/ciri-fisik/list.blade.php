@@ -26,8 +26,8 @@
                 </thead>
                 <tbody>
                     @foreach ($lists as $list)
-
-
+                        
+                    
                             <tr class="bg-navbar border-b ">
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                     {{ $list->warna }}
@@ -45,10 +45,20 @@
                                     <a href="{{ route('ciri-fisik.edit', $list->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                                 </td>
                                 <td class="px-6 py-4 text-right">
-                                    <a href="{{ route('diagnosa.hasil', $list->id_diagnosa) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Hasil diagnosa</a>
+                                    @if ($list->id_diagnosa == null)
+                                        @if (Auth::user()->role == 'ahli')
+                                        <a href="{{ route('diagnosa.tambah', $list->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Tambah diagnosa</a>
+                                        @else
+                                            
+                                        belum di diagnosa
+                                        @endif
+                                    @else
+                        
+                                        <a href="{{ route('diagnosa.hasil', $list->id_diagnosa) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Hasil diagnosa</a>
+                                    @endif
                                 </td>
-                            </tr>
-                        @endforeach
+                            </tr> 
+                        @endforeach 
 
 
                 </tbody>
