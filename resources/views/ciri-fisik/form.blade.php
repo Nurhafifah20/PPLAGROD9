@@ -20,6 +20,10 @@
                 <input type="text" class="bg-input border-none h-[50px] shadow-inners" name="kerusakan">
             </div>
             <div class="w-full flex flex-col gap-y-2 mt-3">
+                <label for="">Tekstur kedelai</label>
+                <input type="text" class="bg-input border-none h-[50px] shadow-inners" name="tekstur">
+            </div>
+            <div class="w-full flex flex-col gap-y-2 mt-3">
                 <label for="">Umur Kedelai</label>
                 <input type="text" class="bg-input border-none h-[50px] " name="umur">
             </div>

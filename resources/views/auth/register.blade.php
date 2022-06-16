@@ -86,7 +86,12 @@
                         <x-input id="gender" class="bg-input rounded-md border-none text-black font-bold shadow-inners"  type="text" name="gender" :value="old('gender')" placeholder="gender" required />
   
                         <x-input id="email" class="bg-input rounded-md border-none text-black font-bold shadow-inners"  type="email" name="email" :value="old('email')" placeholder="email" required />
-
+                        <select id="role" name="role" class="bg-input rounded-md border-none text-black font-bold shadow-inners">
+                            <option value="pemula">pemula</option>
+                            <option value="admin">Admin</option>
+                            <option value="ahli">ahli</option>
+                            {{-- <option value="audi">Audi</option> --}}
+                          </select>
                         <x-input id="password" class="bg-input rounded-md border-none text-black font-bold shadow-inners" placeholder="password"
                                         type="password"
                                         name="password"

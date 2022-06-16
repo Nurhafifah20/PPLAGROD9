@@ -27,17 +27,23 @@ class CirifisikController extends Controller
     public function update(Request $rq)
     {
          $data = $rq->all();
+        //  dd($data['warna']);
          $cf = Cirifisik::find($data['id']);
-         $cf->update($data);
+         $cf->warna = $data['warna'];
+         $cf->bentuk = $data['bentuk'];
+         $cf->kerusakan = $data['kerusakan'];
+         $cf->tekstur = $data['tekstur'];
+         $cf->umur = $data['umur'];
+         $cf->save();
          return back()->with('success', 'Data Berhasil diperbarui');
     }
 
     public function list()
     {
-        if(Auth::user()->role == 'ahli'){
+        if(Auth::user()->role == 'ahli' || Auth::user()->role == "admin"){
             $cf = Cirifisik::get();
+            // dd($cf);
         }else{
-
             $cf = Cirifisik::where('id_user', Auth::user()->id)->get();
         }
         // dd($cf);
@@ -46,15 +52,14 @@ class CirifisikController extends Controller
 
     public function store(Request $rq){
         $data = $rq->all();
-        // dd($data);
         $create = new Cirifisik();
         $create->id_user = Auth::user()->id;
         $create->warna = $data["warna"];
         $create->bentuk = $data["bentuk"];
         $create->kerusakan = $data["kerusakan"];
+        $create->tekstur = $data["tekstur"];
         $create->umur = $data["umur"];
         $create->save();
-
         return back()->with('success', "berhasil ditambah");
     }
 }

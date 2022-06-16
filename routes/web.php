@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\CirifisikController;
 use App\Http\Controllers\DiagnosaController;
 use Illuminate\Support\Facades\Route;
@@ -21,23 +22,29 @@ Route::get('/', function () {
 
 Route::get('/profile', function () {
     return view('profile');
-})->name('profile');
+})->middleware(['auth'])->name('profile');
 
 
 
 
-Route::name('diagnosa.')->group(function(){
+
+Route::middleware(['auth'])->name('diagnosa.')->group(function(){
     Route::get('/diagnosa', function(){
         return view('diagnosa.index');
     })->name('index');
-
+    
     Route::get('/diagnosa/list', [DiagnosaController::class, 'list'])->name('list');
     Route::get('/diagnosa/hasil/{id}', [DiagnosaController::class, 'hasil'])->name('hasil');
+    Route::get('/diagnosa/edit/{id}', [DiagnosaController::class, 'edit'])->name('edit');
     Route::get('/diagnosa/tambah/{id}', [DiagnosaController::class, 'tambah'])->name('tambah');
     Route::post('/diagnosa/store', [DiagnosaController::class, 'store'])->name('store');
+    Route::post('/diagnosa/update', [DiagnosaController::class, 'update'])->name('update');
 });
 
-Route::name('ciri-fisik.')->group(function(){
+
+Route::post('/pesan', [ChatController::class, 'send'])->name("pesan");
+
+Route::middleware(['auth'])->name('ciri-fisik.')->group(function(){
     Route::get('/ciri-fisik', [CirifisikController::class, 'index'])->name('index');
     Route::get('/ciri-fisik/list', [CirifisikController::class, 'list'])->name('list');
     Route::get('/ciri-fisik/edit/{id}', [CirifisikController::class, 'edit'])->name('edit');
@@ -46,9 +53,7 @@ Route::name('ciri-fisik.')->group(function(){
     Route::post('/ciri-fisik/store', [CirifisikController::class, 'store'])->name('store');
 });
 
-Route::get('/chat', function(){
-    return view('chat.index');
-})->name('konsultasi');
+Route::get('/chat', [ChatController::class, "index"])->middleware(['auth'])->name('konsultasi');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

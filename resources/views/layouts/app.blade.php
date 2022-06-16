@@ -26,7 +26,15 @@
 <body>
 
     <div class="bg-navbar-old h-[118px] flex justify-center items-center relative">
+        @if (Route::is('diagnosa.*') || Route::is('ciri-fisik.*'))
+            <a href="{{ url()->previous() }}">
+                <img class="absolute top-2 left-10" src="{{ asset('img/logout.png') }}" width="60" alt="">
+            </a>
+
+        @else
         <img class="absolute top-2 left-10" src="{{ asset('img/logo.png') }}" width="60" alt="">
+        @endif
+
         <h3 class="text-white text-2xl font-extrabold">SIAPA TAHU</h3>
         @if ( !Auth::user())            
             <div class="absolute top-[25%] sm:top-[35%] flex-col sm:flex-row right-10 flex gap-y-5 gap-x-5 text-white text-center">

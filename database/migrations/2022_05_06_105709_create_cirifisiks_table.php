@@ -21,6 +21,7 @@ class CreateCirifisiksTable extends Migration
             $table->string('bentuk');
             $table->string('kerusakan');
             $table->string('umur');
+            $table->string('tekstur');
             $table->enum('status', ['belum', 'sudah'])->default('belum');
             $table->timestamps();
         });

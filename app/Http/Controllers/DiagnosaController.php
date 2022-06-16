@@ -21,6 +21,24 @@ class DiagnosaController extends Controller
         return view('ciri-fisik.hasil-diagnosa', ['hasil' => $cf]);
     }   
 
+    public function edit($id){
+        $diagnosa = Diagnosa::find($id);
+        return view("diagnosa.edit", ["diagnosa" => $diagnosa]);
+    }
+
+    public function update(Request $request){
+        $data = $request->all();
+        $cf = Diagnosa::find($data['id']);
+
+        $cf->nama = $data['nama'];
+        $cf->kerusakan = $data['kerusakan'];
+        $cf->kelayakan = $data['kelayakan'];
+        $cf->warna = $data['warna'];
+        $cf->save();
+        return back()->with('success', "berhasil diupdate");
+
+    }
+
 
     public function tambah($id)
     {

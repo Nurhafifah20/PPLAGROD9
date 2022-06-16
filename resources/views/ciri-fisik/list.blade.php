@@ -17,10 +17,10 @@
                             Umur
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            <span class="sr-only">Edit</span>
+                            Edit
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            <span class="sr-only">Hasil diagnosa</span>
+                            Hasil diagnosa
                         </th>
                     </tr>
                 </thead>
@@ -41,15 +41,14 @@
                                 <td class="px-6 py-4 text-gray-900">
                                     {{ $list->umur }}
                                 </td>
-                                <td class="px-6 py-4 text-right">
+                                <td class="px-6 py-4">
                                     <a href="{{ route('ciri-fisik.edit', $list->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                                 </td>
-                                <td class="px-6 py-4 text-right">
+                                <td class="px-6 py-4">
                                     @if ($list->id_diagnosa == null)
                                         @if (Auth::user()->role == 'ahli')
                                         <a href="{{ route('diagnosa.tambah', $list->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Tambah diagnosa</a>
                                         @else
-                                            
                                         belum di diagnosa
                                         @endif
                                     @else
@@ -57,6 +56,7 @@
                                         <a href="{{ route('diagnosa.hasil', $list->id_diagnosa) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Hasil diagnosa</a>
                                     @endif
                                 </td>
+
                             </tr> 
                         @endforeach 
 

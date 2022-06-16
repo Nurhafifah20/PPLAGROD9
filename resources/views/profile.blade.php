@@ -1,9 +1,13 @@
 <x-app-layout>
 
     <div class="flex justify-center gap-x-10">
-        <div class="bg-navbar-young px-20 py-10 justify-center items-center  shadow-inners rounded">
+        <div class="bg-navbar-young d-flex px-20 py-10 justify-center items-center  shadow-inners rounded">
             <img src="{{ asset('img/profile.png') }}" class="w-[200px]" alt="">
             <h1 class="text-3xl text-center mt-10">{{ Auth::user()->name }}</h1>
+            <form action="{{route('logout') }}" method="post">
+                @csrf
+                <button class="px-2 py3 bg-green-300 rounded mt-10 text-center" type="submit">logout</button>
+            </form>
         </div>
         <div class="bg-navbar-young px-20 py-10 w-full shadow-inners rounded ml-20">
             <form action="" method="post"  class="flex flex-col gap-y-5 w-full">

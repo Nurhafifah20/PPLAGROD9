@@ -678,24 +678,9 @@ select {
 .m-\[14px\] {
   margin: 14px;
 }
-.m-10 {
-  margin: 2.5rem;
-}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
-}
-.mx-40 {
-  margin-left: 10rem;
-  margin-right: 10rem;
-}
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-.mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
 }
 .mx-96 {
   margin-left: 24rem;
@@ -704,6 +689,14 @@ select {
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
+}
+.mx-40 {
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 .ml-3 {
   margin-left: 0.75rem;
@@ -753,26 +746,26 @@ select {
 .-mt-px {
   margin-top: -1px;
 }
-.mt-6 {
-  margin-top: 1.5rem;
-}
-.-mr-2 {
-  margin-right: -0.5rem;
-}
 .mb-8 {
   margin-bottom: 2rem;
 }
+.mt-6 {
+  margin-top: 1.5rem;
+}
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
 .mb-4 {
   margin-bottom: 1rem;
+}
+.-mr-2 {
+  margin-right: -0.5rem;
 }
 .mt-1 {
   margin-top: 0.25rem;
 }
 .mb-5 {
   margin-bottom: 1.25rem;
-}
-.mb-3 {
-  margin-bottom: 0.75rem;
 }
 .box-border {
   box-sizing: border-box;
@@ -813,15 +806,6 @@ select {
 .h-8 {
   height: 2rem;
 }
-.h-10 {
-  height: 2.5rem;
-}
-.h-4 {
-  height: 1rem;
-}
-.h-6 {
-  height: 1.5rem;
-}
 .h-\[100vh\] {
   height: 100vh;
 }
@@ -830,6 +814,15 @@ select {
 }
 .h-\[100\%\] {
   height: 100%;
+}
+.h-10 {
+  height: 2.5rem;
+}
+.h-4 {
+  height: 1rem;
+}
+.h-6 {
+  height: 1.5rem;
 }
 .h-20 {
   height: 5rem;
@@ -971,9 +964,6 @@ select {
   margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
 }
-.overflow-auto {
-  overflow: auto;
-}
 .overflow-hidden {
   overflow: hidden;
 }
@@ -1072,17 +1062,17 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(204 251 241 / var(--tw-bg-opacity));
 }
+.bg-green-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 163 74 / var(--tw-bg-opacity));
+}
 .bg-gray-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 }
-.bg-red-200 {
+.bg-green-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(254 202 202 / var(--tw-bg-opacity));
-}
-.bg-green-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 163 74 / var(--tw-bg-opacity));
+  background-color: rgb(134 239 172 / var(--tw-bg-opacity));
 }
 .fill-current {
   fill: currentColor;
@@ -1103,9 +1093,6 @@ select {
 }
 .p-10 {
   padding: 2.5rem;
-}
-.p-5 {
-  padding: 1.25rem;
 }
 .px-4 {
   padding-left: 1rem;
