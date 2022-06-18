@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class CirifisikController extends Controller
 {
+    
     public function index()
     {
         return view('ciri-fisik.index');
@@ -17,7 +18,7 @@ class CirifisikController extends Controller
     {
         return view('ciri-fisik.form');
     }
-
+    
     public function edit($id)
     {
         $data = Cirifisik::find($id);
@@ -37,6 +38,11 @@ class CirifisikController extends Controller
          $cf->save();
          return back()->with('success', 'Data Berhasil diperbarui');
     }
+    public function hasil($id)
+    {
+        $cf = Cirifisik::find($id);
+        return view('ciri-fisik.hasil-diagnosa', ['hasil' => $cf]);
+    }   
 
     public function list()
     {
@@ -48,6 +54,12 @@ class CirifisikController extends Controller
         }
         // dd($cf);
         return view('ciri-fisik.list', ['lists' => $cf]);
+    }
+    
+    public function delete($id){
+        $cf = Cirifisik::find($id);
+        $cf->delete();
+        return back()->with('success', "berhasil dihapus");
     }
 
     public function store(Request $rq){

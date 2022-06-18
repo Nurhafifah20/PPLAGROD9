@@ -20,6 +20,9 @@
                             Edit
                         </th>
                         <th scope="col" class="px-6 py-3">
+                            Hapus
+                        </th>
+                        <th scope="col" class="px-6 py-3">
                             Hasil diagnosa
                         </th>
                     </tr>
@@ -43,6 +46,9 @@
                                 </td>
                                 <td class="px-6 py-4">
                                     <a href="{{ route('ciri-fisik.edit', $list->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <a href="{{ route('ciri-fisik.delete', $list->id) }}" class="font-medium text-red-600 dark:text-red-500 hover:underline">Hapus</a>
                                 </td>
                                 <td class="px-6 py-4">
                                     @if ($list->id_diagnosa == null)

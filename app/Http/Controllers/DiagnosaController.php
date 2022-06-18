@@ -21,6 +21,16 @@ class DiagnosaController extends Controller
         return view('ciri-fisik.hasil-diagnosa', ['hasil' => $cf]);
     }   
 
+    public function delete($id){
+        $d = Diagnosa::find($id);
+        $d->delete();
+        // dd($cf);
+        $cf = Cirifisik::where('id_diagnosa', $id)->first();
+        $cf->update(['id_diagnosa' => null]);
+        return back()->with('success', "berhasil dihapus");
+        
+    }
+
     public function edit($id){
         $diagnosa = Diagnosa::find($id);
         return view("diagnosa.edit", ["diagnosa" => $diagnosa]);

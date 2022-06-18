@@ -23,6 +23,9 @@
                             Edit
                         </th>
                         <th scope="col" class="px-6 py-3">
+                            Hapus
+                        </th>
+                        <th scope="col" class="px-6 py-3">
                             <span class="sr-only">tambah diagnosa</span>
                         </th>
                     </tr>
@@ -50,6 +53,14 @@
                                     <a href="{{ route('diagnosa.edit', $list->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                                     @endif
                                     
+                                </td>
+                                <td class="px-6 py-4">
+                                    @if(Auth::user()->role != "pemula")
+                                        @if ($list->id_diagnosa)
+
+                                            <a href="{{ route('diagnosa.delete', $list->id_diagnosa) }}" class="font-medium text-red-600 dark:text-red-500 hover:underline">Hapus</a>
+                                        @endif
+                                    @endif
                                 </td>
                                 <td class="px-6 py-4 text-right">
                                     @if ($list->id_diagnosa)

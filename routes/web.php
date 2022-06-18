@@ -36,6 +36,7 @@ Route::middleware(['auth'])->name('diagnosa.')->group(function(){
     Route::get('/diagnosa/list', [DiagnosaController::class, 'list'])->name('list');
     Route::get('/diagnosa/hasil/{id}', [DiagnosaController::class, 'hasil'])->name('hasil');
     Route::get('/diagnosa/edit/{id}', [DiagnosaController::class, 'edit'])->name('edit');
+    Route::get('/diagnosa/delete/{id}', [DiagnosaController::class, 'delete'])->name('delete');
     Route::get('/diagnosa/tambah/{id}', [DiagnosaController::class, 'tambah'])->name('tambah');
     Route::post('/diagnosa/store', [DiagnosaController::class, 'store'])->name('store');
     Route::post('/diagnosa/update', [DiagnosaController::class, 'update'])->name('update');
@@ -48,6 +49,7 @@ Route::middleware(['auth'])->name('ciri-fisik.')->group(function(){
     Route::get('/ciri-fisik', [CirifisikController::class, 'index'])->name('index');
     Route::get('/ciri-fisik/list', [CirifisikController::class, 'list'])->name('list');
     Route::get('/ciri-fisik/edit/{id}', [CirifisikController::class, 'edit'])->name('edit');
+    Route::get('/ciri-fisik/delete/{id}', [CirifisikController::class, 'delete'])->name('delete');
     Route::post('/ciri-fisik/update', [CirifisikController::class, 'update'])->name('update');
     Route::get('/ciri-fisik/form', [CirifisikController::class, 'tambah'])->name('form');
     Route::post('/ciri-fisik/store', [CirifisikController::class, 'store'])->name('store');
